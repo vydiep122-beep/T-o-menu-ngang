@@ -54,7 +54,7 @@ main {
 }
 
 .intro {
-    padding: 64px 0 42px;
+    padding: 64px 0 38px;
 }
 
 .eyebrow {
@@ -67,6 +67,7 @@ main {
 
 h1,
 h2,
+h3,
 p {
     margin-top: 0;
 }
@@ -95,30 +96,45 @@ h1 span {
     font-size: 15px;
 }
 
-.demo-layout {
-    display: grid;
-    grid-template-columns: 196px minmax(0, 1fr);
-    align-items: start;
-    gap: 30px;
-    padding-bottom: 80px;
+.menu-demo {
+    position: relative;
+    z-index: 2;
+    padding: 22px 24px 24px;
+    border: 1px solid #dce1d9;
+    border-radius: 5px;
+    background: #fbfaf6;
+    box-shadow: 0 12px 35px rgba(23, 35, 33, 0.08);
 }
 
-.menu-demo {
-    position: sticky;
-    top: 24px;
-    z-index: 2;
-    padding: 16px 12px 12px;
-    border-radius: 5px;
-    background: #172321;
-    box-shadow: 0 12px 35px rgba(23, 35, 33, 0.14);
+.demo-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 19px;
 }
 
 .menu-caption {
-    margin: 0 8px 12px;
-    color: #9baca4;
+    margin: 0 0 5px;
+    color: #a55337;
     font-size: 9px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1.4px;
+}
+
+.demo-heading h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.demo-hint {
+    padding-bottom: 3px;
+    color: #687770;
+    font-size: 11px;
+}
+
+.demo-hint span {
+    color: #a55337;
 }
 
 .menu-list,
@@ -128,21 +144,31 @@ h1 span {
     list-style: none;
 }
 
+.menu-list {
+    display: flex;
+    align-items: stretch;
+    border-radius: 3px;
+    background: #173c39;
+}
+
 .menu-list li {
     position: relative;
-    width: 100%;
-    min-height: 42px;
+}
+
+.menu-list > li > a {
+    min-width: 132px;
+    min-height: 48px;
 }
 
 .menu-list a {
     display: flex;
-    min-height: 42px;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 0 12px;
-    color: #edf1ed;
+    padding: 0 17px;
+    color: #f5f4ef;
     font-size: 12px;
+    font-weight: 600;
     text-decoration: none;
     transition: background-color 150ms ease, color 150ms ease;
 }
@@ -151,30 +177,31 @@ h1 span {
 .menu-list a:focus-visible,
 .menu-list li:focus-within > a {
     outline: none;
-    background: #a55337;
+    background: #b4473e;
     color: #fff;
 }
 
 .arrow {
     color: #e8956d;
-    font-size: 19px;
+    font-size: 16px;
     line-height: 1;
 }
 
 .menu-list ul {
     position: absolute;
     z-index: 3;
-    top: 0;
-    left: calc(100% - 1px);
-    width: 190px;
+    top: 100%;
+    left: 0;
+    width: 210px;
     visibility: hidden;
     border: 1px solid #33413d;
-    border-radius: 0 4px 4px 0;
-    background: #172321;
-    box-shadow: 10px 12px 25px rgba(23, 35, 33, 0.18);
+    border-top: 2px solid #b4473e;
+    border-radius: 0 0 4px 4px;
+    background: #173c39;
+    box-shadow: 0 12px 25px rgba(23, 35, 33, 0.18);
     opacity: 0;
     pointer-events: none;
-    transform: translateX(6px);
+    transform: translateY(5px);
     transition: opacity 140ms ease, transform 140ms ease;
 }
 
@@ -183,29 +210,45 @@ h1 span {
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
-.menu-hint {
-    margin: 13px 7px 2px;
-    color: #9baca4;
-    font-size: 10px;
-    line-height: 1.5;
+.menu-list ul a {
+    min-height: 42px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 11px;
 }
 
-.menu-hint span {
-    color: #e8956d;
+.menu-list ul li:last-child > a {
+    border-bottom: 0;
 }
 
-.lesson-content {
+.lesson-intro {
+    padding: 66px 0 22px;
+}
+
+.lesson-intro h2 {
+    margin-bottom: 10px;
+    font-size: clamp(30px, 4vw, 42px);
+}
+
+.lesson-intro > p:last-child {
+    max-width: 600px;
+    margin-bottom: 0;
+    color: #5a6964;
+    font-size: 14px;
+}
+
+.lesson-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
+    padding-bottom: 76px;
 }
 
 .lesson-card {
-    min-height: 185px;
-    padding: 22px;
+    min-height: 168px;
+    padding: 21px;
     border: 1px solid #e0e2da;
     border-radius: 4px;
     background: #fbfaf6;
@@ -219,9 +262,12 @@ h1 span {
     letter-spacing: 1px;
 }
 
-.lesson-card h2 {
-    margin: 17px 0 9px;
-    font-size: 22px;
+.lesson-card h3 {
+    margin: 15px 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.25;
 }
 
 .lesson-card p {
@@ -277,48 +323,36 @@ code {
         padding-top: 48px;
     }
 
-    .demo-layout {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
     .menu-demo {
-        position: static;
+        padding: 18px 14px;
     }
 
-    .menu-list ul {
-        position: static;
-        display: block;
-        width: 100%;
-        padding-left: 14px;
-        visibility: visible;
-        border: 0;
-        border-radius: 0;
-        background: transparent;
-        box-shadow: none;
-        opacity: 1;
-        pointer-events: auto;
-        transform: none;
+    .demo-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 7px;
     }
 
-    .menu-list ul a {
-        min-height: 38px;
-        color: #c4d3cc;
-        font-size: 11px;
+    .menu-list {
+        flex-wrap: wrap;
     }
 
-    .menu-list ul a:hover,
-    .menu-list ul a:focus-visible,
-    .menu-list ul li:focus-within > a {
-        color: #fff;
+    .menu-list > li {
+        width: 50%;
     }
 
-    .menu-hint {
-        margin-top: 11px;
+    .menu-list > li > a {
+        min-width: 0;
+        min-height: 46px;
     }
 
-    .lesson-content {
-        grid-template-columns: 1fr;
+    .menu-list > li:nth-child(even) > ul {
+        right: 0;
+        left: auto;
+    }
+
+    .lesson-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .lesson-card {
@@ -338,6 +372,12 @@ code {
 
     .site-footer > a:last-child {
         flex-basis: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .lesson-grid {
+        grid-template-columns: 1fr;
     }
 }
 

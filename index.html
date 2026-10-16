@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ví dụ menu dropdown dọc nhiều cấp với HTML và CSS.">
-    <title>CSS Dropdown | Menu thả xuống dọc</title>
+    <meta name="description" content="Ví dụ menu dropdown ngang hai cấp với HTML và CSS.">
+    <title>CSS Dropdown | Menu thả xuống ngang</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,134 +16,121 @@
     <main id="home">
         <section class="intro">
             <p class="eyebrow">ĐIỀU HƯỚNG TRỰC QUAN</p>
-            <h1>Menu dropdown<br><span>theo chiều dọc.</span></h1>
-            <p class="intro-copy">Di chuột qua các mục có dấu mũi tên để mở menu con. Bạn cũng có thể dùng phím Tab để điều hướng mà không cần chuột.</p>
+            <h1>Menu dropdown<br><span>theo chiều ngang.</span></h1>
+            <p class="intro-copy">Rê chuột qua mục có dấu mũi tên để mở menu con. Các mục con được ẩn mặc định và cũng có thể mở bằng bàn phím.</p>
         </section>
 
-        <div class="demo-layout">
-            <aside class="menu-demo">
-                <p class="menu-caption">MENU ĐIỀU HƯỚNG</p>
-                <nav id="menu" aria-label="Menu ví dụ">
-                    <ul class="menu-list">
-                        <li><a href="#tong-quan">Tổng quan</a></li>
-                        <li>
-                            <a href="#san-pham" aria-haspopup="true">Sản phẩm <span class="arrow" aria-hidden="true">›</span></a>
-                            <ul>
-                                <li><a href="#thiet-ke">Thiết kế</a></li>
-                                <li><a href="#phat-trien">Phát triển</a></li>
-                                <li>
-                                    <a href="#tai-nguyen" aria-haspopup="true">Tài nguyên <span class="arrow" aria-hidden="true">›</span></a>
-                                    <ul>
-                                        <li><a href="#giao-dien">Mẫu giao diện</a></li>
-                                        <li><a href="#thanh-phan">Thành phần UI</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#huong-dan" aria-haspopup="true">Hướng dẫn <span class="arrow" aria-hidden="true">›</span></a>
-                            <ul>
-                                <li><a href="#bat-dau">Bắt đầu</a></li>
-                                <li><a href="#meo">Mẹo sử dụng</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#ho-tro" aria-haspopup="true">Hỗ trợ <span class="arrow" aria-hidden="true">›</span></a>
-                            <ul>
-                                <li><a href="#lien-he">Liên hệ</a></li>
-                                <li><a href="#cau-hoi">Câu hỏi thường gặp</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="menu-hint">Rê chuột hoặc dùng phím Tab để khám phá <span aria-hidden="true">↗</span></p>
-            </aside>
-
-            <div class="lesson-content">
-                <section class="lesson-card" id="tong-quan">
-                    <span class="card-index">01 / CẤU TRÚC</span>
-                    <h2>Menu lồng nhau</h2>
-                    <p>Danh sách <code>&lt;ul&gt;</code> đặt bên trong một mục <code>&lt;li&gt;</code> sẽ tạo thành menu con. Các mục như Sản phẩm, Hướng dẫn và Hỗ trợ có thể mở ra các liên kết cấp tiếp theo.</p>
-                </section>
-
-                <section class="lesson-card" id="san-pham">
-                    <span class="card-index">02 / ĐỊNH VỊ</span>
-                    <h2>Đặt menu con cạnh mục chọn</h2>
-                    <p>Mỗi <code>li</code> dùng <code>position: relative</code> làm mốc. Menu con dùng <code>position: absolute</code> và <code>left: 100%</code> để xuất hiện bên cạnh mục cha.</p>
-                </section>
-
-                <section class="lesson-card" id="thiet-ke">
-                    <span class="card-index">03 / TƯƠNG TÁC</span>
-                    <h2>Hiện menu khi hover</h2>
-                    <p>Menu con được ẩn bằng <code>visibility: hidden</code>, sau đó hiện ra khi mục cha có trạng thái <code>:hover</code>. Trạng thái <code>:focus-within</code> cũng hỗ trợ người dùng bàn phím.</p>
-                </section>
-
-                <section class="lesson-card" id="phat-trien">
-                    <span class="card-index">04 / TRẢI NGHIỆM</span>
-                    <h2>Phân cấp dễ theo dõi</h2>
-                    <p>Mũi tên gợi ý những mục có nội dung mở rộng. Các liên kết trong bản minh họa đều dẫn đến phần giải thích tương ứng trên trang.</p>
-                </section>
-
-                <section class="lesson-card" id="tai-nguyen">
-                    <span class="card-index">05 / TÙY CHỈNH</span>
-                    <h2>Điều chỉnh theo nội dung</h2>
-                    <p>Đổi tên mục, màu sắc và khoảng cách để phù hợp với giao diện của bạn. Giữ nhãn ngắn và nhóm các liên kết liên quan để menu luôn dễ đọc.</p>
-                </section>
-
-                <section class="lesson-card" id="giao-dien">
-                    <span class="card-index">06 / MẪU GIAO DIỆN</span>
-                    <h2>Thiết kế nhất quán</h2>
-                    <p>Dùng cùng kiểu chữ, độ tương phản và khoảng cách cho các cấp menu để người dùng nhận biết được cấu trúc.</p>
-                </section>
-
-                <section class="lesson-card" id="thanh-phan">
-                    <span class="card-index">07 / THÀNH PHẦN UI</span>
-                    <h2>Trạng thái rõ ràng</h2>
-                    <p>Màu nền thay đổi khi rê chuột hoặc focus giúp làm nổi bật mục đang được chọn.</p>
-                </section>
-
-                <section class="lesson-card" id="huong-dan">
-                    <span class="card-index">08 / HƯỚNG DẪN</span>
-                    <h2>Thử điều hướng</h2>
-                    <p>Di chuyển con trỏ qua các mục có mũi tên, hoặc nhấn Tab để lần lượt focus các liên kết và mở menu con.</p>
-                </section>
-
-                <section class="lesson-card" id="bat-dau">
-                    <span class="card-index">09 / BẮT ĐẦU</span>
-                    <h2>HTML trước, CSS sau</h2>
-                    <p>Tạo các danh sách <code>&lt;ul&gt;</code> lồng nhau trước, sau đó định dạng vị trí và trạng thái ẩn/hiện bằng CSS.</p>
-                </section>
-
-                <section class="lesson-card" id="meo">
-                    <span class="card-index">10 / MẸO SỬ DỤNG</span>
-                    <h2>Thiết kế cho nhiều thiết bị</h2>
-                    <p>Trên màn hình nhỏ, các menu con được hiển thị theo chiều dọc để liên kết vẫn dễ tiếp cận bằng thao tác chạm.</p>
-                </section>
-
-                <section class="lesson-card" id="ho-tro">
-                    <span class="card-index">11 / HỖ TRỢ</span>
-                    <h2>Menu dễ sử dụng</h2>
-                    <p>Đảm bảo các liên kết có nhãn dễ hiểu và trạng thái focus dễ nhìn, để menu hoạt động tốt với cả chuột lẫn bàn phím.</p>
-                </section>
-
-                <section class="lesson-card" id="lien-he">
-                    <span class="card-index">12 / LIÊN HỆ</span>
-                    <h2>Kết nối với chúng tôi</h2>
-                    <p><a class="text-link" href="mailto:hello@example.com">hello@example.com</a></p>
-                </section>
-
-                <section class="lesson-card" id="cau-hoi">
-                    <span class="card-index">13 / CÂU HỎI THƯỜNG GẶP</span>
-                    <h2>Dropdown là gì?</h2>
-                    <p>Đây là menu con được mở từ một mục điều hướng, giúp sắp xếp nhiều liên kết theo nhóm và phân cấp.</p>
-                </section>
+        <section class="menu-demo" aria-labelledby="menu-title">
+            <div class="demo-heading">
+                <div>
+                    <p class="menu-caption">BẢN MINH HỌA TƯƠNG TÁC</p>
+                    <h2 id="menu-title">Khám phá các mục</h2>
+                </div>
+                <span class="demo-hint">Rê chuột hoặc dùng phím Tab <span aria-hidden="true">↗</span></span>
             </div>
+            <nav id="menu" aria-label="Menu điều hướng ngang">
+                <ul class="menu-list">
+                    <li><a href="#tong-quan">Tổng quan</a></li>
+                    <li>
+                        <a href="#san-pham" aria-haspopup="true">Sản phẩm <span class="arrow" aria-hidden="true">⌄</span></a>
+                        <ul>
+                            <li><a href="#thiet-ke">Thiết kế giao diện</a></li>
+                            <li><a href="#phat-trien">Phát triển website</a></li>
+                            <li><a href="#tai-nguyen">Tài nguyên miễn phí</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#huong-dan" aria-haspopup="true">Hướng dẫn <span class="arrow" aria-hidden="true">⌄</span></a>
+                        <ul>
+                            <li><a href="#bat-dau">Bắt đầu sử dụng</a></li>
+                            <li><a href="#meo">Mẹo CSS hữu ích</a></li>
+                            <li><a href="#vi-du">Ví dụ thực hành</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#ho-tro" aria-haspopup="true">Hỗ trợ <span class="arrow" aria-hidden="true">⌄</span></a>
+                        <ul>
+                            <li><a href="#lien-he">Liên hệ với chúng tôi</a></li>
+                            <li><a href="#cau-hoi">Câu hỏi thường gặp</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="lesson-intro">
+            <p class="eyebrow">CÁCH MENU HOẠT ĐỘNG</p>
+            <h2>Gọn gàng ở mọi cấp.</h2>
+            <p>Menu chính được sắp xếp theo chiều ngang. Khi rê chuột lên mục có trình đơn con, menu phụ xuất hiện ngay bên dưới.</p>
+        </section>
+
+        <div class="lesson-grid">
+            <article class="lesson-card" id="tong-quan">
+                <span class="card-index">01 / CẤU TRÚC HTML</span>
+                <h3>Danh sách liên kết lồng nhau</h3>
+                <p>Dùng một danh sách <code>&lt;ul&gt;</code> cho menu chính và đặt danh sách con bên trong mục <code>&lt;li&gt;</code> tương ứng.</p>
+            </article>
+            <article class="lesson-card" id="san-pham">
+                <span class="card-index">02 / BỐ CỤC NGANG</span>
+                <h3>Sắp xếp các mục trên một hàng</h3>
+                <p>Menu chính dùng <code>display: flex</code> để các mục điều hướng nằm cạnh nhau theo chiều ngang.</p>
+            </article>
+            <article class="lesson-card" id="thiet-ke">
+                <span class="card-index">03 / ĐỊNH VỊ MENU CON</span>
+                <h3>Hiện menu ngay bên dưới</h3>
+                <p>Mục cha dùng <code>position: relative</code>; menu con dùng <code>position: absolute</code>, <code>top: 100%</code> và <code>left: 0</code>.</p>
+            </article>
+            <article class="lesson-card" id="phat-trien">
+                <span class="card-index">04 / TRẠNG THÁI ẨN</span>
+                <h3>Ẩn menu con mặc định</h3>
+                <p><code>visibility: hidden</code> và <code>opacity: 0</code> giữ menu phụ ẩn cho đến khi người dùng chọn mục cha.</p>
+            </article>
+            <article class="lesson-card" id="tai-nguyen">
+                <span class="card-index">05 / TƯƠNG TÁC CHUỘT</span>
+                <h3>Hiện menu khi hover</h3>
+                <p>Bộ chọn <code>li:hover &gt; ul</code> chỉ hiện danh sách con thuộc mục đang được rê chuột.</p>
+            </article>
+            <article class="lesson-card" id="huong-dan">
+                <span class="card-index">06 / HỖ TRỢ BÀN PHÍM</span>
+                <h3>Điều hướng bằng Tab</h3>
+                <p><code>:focus-within</code> cho phép mở menu con khi liên kết bên trong mục cha được focus.</p>
+            </article>
+            <article class="lesson-card" id="bat-dau">
+                <span class="card-index">07 / BẮT ĐẦU</span>
+                <h3>Tạo cấu trúc trước</h3>
+                <p>Viết các mục chính và các liên kết con trong HTML, sau đó dùng CSS để tạo bố cục và trạng thái tương tác.</p>
+            </article>
+            <article class="lesson-card" id="meo">
+                <span class="card-index">08 / MẸO CSS</span>
+                <h3>Làm nổi bật mục đang chọn</h3>
+                <p>Màu nền chuyển sang đỏ khi hover hoặc focus để người dùng dễ nhận biết mục menu đang hoạt động.</p>
+            </article>
+            <article class="lesson-card" id="vi-du">
+                <span class="card-index">09 / VÍ DỤ</span>
+                <h3>Thử menu ngay phía trên</h3>
+                <p>Rê chuột lên Sản phẩm, Hướng dẫn hoặc Hỗ trợ để mở menu con; nhấn Tab để kiểm tra trạng thái focus.</p>
+            </article>
+            <article class="lesson-card" id="ho-tro">
+                <span class="card-index">10 / HỖ TRỢ</span>
+                <h3>Cần trợ giúp?</h3>
+                <p>Các mục trong menu được bố trí rõ ràng, có thể truy cập bằng chuột hoặc bàn phím.</p>
+            </article>
+            <article class="lesson-card" id="lien-he">
+                <span class="card-index">11 / LIÊN HỆ</span>
+                <h3>Kết nối với chúng tôi</h3>
+                <p><a class="text-link" href="mailto:hello@example.com">hello@example.com</a></p>
+            </article>
+            <article class="lesson-card" id="cau-hoi">
+                <span class="card-index">12 / CÂU HỎI THƯỜNG GẶP</span>
+                <h3>Menu con hiển thị khi nào?</h3>
+                <p>Menu con bị ẩn lúc đầu và hiện ra khi mục cha được hover hoặc nhận focus từ bàn phím.</p>
+            </article>
         </div>
     </main>
 
     <footer class="site-footer">
         <a class="brand" href="#home">D<span>.</span></a>
-        <p>Thực hành menu dropdown với HTML &amp; CSS.</p>
+        <p>Thực hành menu dropdown ngang với HTML &amp; CSS.</p>
         <a href="#home">Về đầu trang ↑</a>
     </footer>
 </body>
